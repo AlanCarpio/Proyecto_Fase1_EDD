@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#pragma once
 #include <tuple>
 string _username = "PM-202000869";
 string _password = "password";
@@ -17,12 +18,14 @@ int Login(){
 }
 int Main_Menu(){
     int resultado = 0;
-    cout << "*********    EDD Proyect Phase 1    *********";
-    cout << "*********    Bienvenido :" << _username << "    *********";
-    cout << "1. Cargar Empleados ";
-    cout << "2. Cargar Proyecto ";
-    cout << "3. Crear Tareas ";
-    cout << "4. Asignar Tareas ";
+    cout << "*********    EDD Proyect Phase 1    *********"<<endl;
+    cout << "*********    Bienvenido :" << _username << "    *********"<<endl;
+    cout << "1. Cargar Empleados "<<endl;
+    cout << "2. Crear Proyecto "<<endl;
+    cout << "3. Crear Tareas "<<endl;
+    cout << "4. Asignar Tareas "<<endl;
+    cout << "5. Asignar Proyecto"<<endl;
+    cout << "6. Salir"<<endl;
     cout << "Elige una Opcion: "; cin >> resultado;
     return resultado;
         
@@ -30,44 +33,57 @@ int Main_Menu(){
 //*********************************** Empledos **************************************
 int Cargar_Empleado(){
     int resultado = 0;
-    cout << "*********    EDD Proyect Phase 1    *********";
-    cout << "*********    Bienvenido " << _username << "    *********";
-    cout << "*********    Menu Carga Empledos    *********";
-    cout << "1. Carga Manual";
-    cout << "2. Carga Masiva";
+    cout << "*********    Bienvenido " << _username << "    *********"<<endl;
+    cout << "*********    EDD Proyect Phase 1    *********"<<endl;
+    cout << "*********    Menu Carga Empledos    *********"<<endl;
+    cout << "1. Carga Manual"<<endl;
+    cout << "2. Carga Masiva"<<endl;
+    cout << "3. Main Menu"<<endl;
     cout << "Elige una Opcion: "; cin >> resultado;
     return resultado;
 }
-tuple<string,string,int> Carga_Manual(){
+tuple<string,string> Carga_Manual(){
     string nombre;
     string password;
-    int resultado = 0;
     cout << "Nombre: "; cin >> nombre;
     cout << "Password: "; cin >> password;
+    /*
     cout << "Puestos Disponibles";
     cout << "1. Developer Frontend";
     cout << "2. Developer BackEnd";
     cout << "3. Quality Assurance";
     cout << "Elige una Opcion: "; cin >> resultado;
-    return make_tuple(nombre,password,resultado);
+    */
+    
+    return make_tuple(nombre,password);
 
 }
 string Carga_Masiva(){
     string archivo;
-    cout << "Nombre Archivo"; cin >> archivo;
+    cout << "Nombre Archivo: "; cin >> archivo;
     return archivo;
 }
 //**************************** Proyecto ******************************
-tuple<string,string> Crear_proyecto(){
+tuple<string,char> Crear_proyecto(){
     string nombre;
-    string Prioridad;
-    cout << "*********    EDD Proyect Phase 1    *********";
-    cout << "*********    Bienvenido " << _username << "    *********";
-    cout << "*********    Menu Crear Proyecto    *********";
+    char Prioridad;
+    cout << "*********    EDD Proyect Phase 1    *********"<<endl;
+    cout << "*********    Bienvenido " << _username << "    *********"<<endl;
+    cout << "*********    Menu Crear Proyecto    *********"<<endl;
     cout << "Ingresa el Nombre del proyecto:";cin>>nombre;
     cout <<"Ingresa la prioridad de tu proyecto (A/B/C):"; cin>>Prioridad;
     return make_tuple(nombre,Prioridad );
 
+}
+tuple<string,string> Asignar_proyecto(){
+    string nombre;
+    string ID_proyecto;
+    cout << "*********    EDD Proyect Phase 1    *********"<<endl;
+    cout << "*********    Bienvenido " << _username << "    *********"<<endl;
+    cout << "*********    Asginar Proyecto       *********"<<endl;
+    cout << "Ingresa el Nombre del Empleado: ";cin>>nombre;
+    cout << "Ingrese el ID proyecto: "; cin>>ID_proyecto;
+    return make_tuple(nombre,ID_proyecto);
 }
 //**************************** Tareas **********************************
 tuple<string,string> Crear_tarea(/* Lista de Proyectos*/ ){
