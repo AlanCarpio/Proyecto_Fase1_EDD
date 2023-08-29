@@ -8,6 +8,9 @@ class Empleados{
         string Password;
         string ID_empleado;
     public:
+        Empleados(string _Nombre){
+            this->Nombre = _Nombre;
+        }
         Empleados(string _Nombre,string _Password){
             Nombre = _Nombre;
             Password= _Password;

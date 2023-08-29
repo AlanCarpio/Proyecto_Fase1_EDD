@@ -1,0 +1,14 @@
+digraph ColaPrioridad{ 
+    node[shape=box] 
+    rankdir=UD;
+    {rank=same; 
+    nodo0x730588[label="PY-100\nC" ,group=0];
+   
+    nodo0x73af58[label="PY-101\nB" ,group=1];
+    
+    
+    nodo0x73b040[label="PY-102\nA" ,group=2]; 
+    } 
+    nodo0x73af58 -> nodo0x730588 [dir=both];nodo0x73af58
+    nodo0x73b040 -> nodo0x73af58 [dir=both];nodo0x73b040
+} 

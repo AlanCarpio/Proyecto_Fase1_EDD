@@ -1,0 +1,7 @@
+digraph ColaPrioridad{ 
+ node[shape=box] 
+ rankdir=UD;
+{rank=same; 
+nodo0xce0588[label="PY-100\nC" ,group=0]; 
+} 
+} 

@@ -13,16 +13,21 @@ class Proyecto{
        ListaEnlazada* Tareas;
       
     public:
+        Proyecto(string _Nombre){
+            this->Nombre=_Nombre;
+        }
         Proyecto(string _Nombre,char _Prioridad){
             this->Nombre=_Nombre;
             this->Prioridad=_Prioridad;
-            this->Tareas = new ListaEnlazada();
-            
-
+            //this->Tareas = new ListaEnlazada();
         }
         Proyecto(string ID_proyecto,string ID_empleado){
             this->ID_proyecto=ID_proyecto;
             this->ID_empleado = ID_empleado;
+        }
+        // ID_empleado
+        string Get_ID_empleado(){
+            return ID_empleado;
         }
         //----------Prioridad
         char Get_Prioridad(){
@@ -31,7 +36,6 @@ class Proyecto{
         void Set_Prioridad(char prioridad){
             this->Prioridad = prioridad;
         }
-        //---------------------
         //----------- ID proyecto
         string Get_ID_proyecto(){
             return ID_proyecto;
@@ -39,7 +43,6 @@ class Proyecto{
         void Set_ID_proyecto(string ID_proyecto){
             this->ID_proyecto = ID_proyecto;
         }
-        //---------------------
         //----------- Nombre
         string Get_Nombre(){
             return Nombre;
@@ -47,8 +50,14 @@ class Proyecto{
         void Set_Nombre(string Nombre){
             this->Nombre = Nombre;
         }
-        //---------------------
-
+        //-------Tarea -------
+        
+        ListaEnlazada* Get_Tarea_lista(){
+            return this->Tareas;
+        }
+        void Set_Tarea_lista(ListaEnlazada* lista_tarea){
+            this->Tareas = lista_tarea;
+        }
         
     
 };

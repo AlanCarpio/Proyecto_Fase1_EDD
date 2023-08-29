@@ -23,6 +23,9 @@ class Nodo3{
         int Get_contador(){
             return this->contador;
         }
+        Empleados* Get_empleado(){
+            return empleado;
+        }
 };
 
 class ListaEnlazadaCircular{
@@ -39,6 +42,7 @@ class ListaEnlazadaCircular{
         }
         void Agregar_Empleado(Empleados* empleado){
             Nodo3* nuevoNodo = new Nodo3(empleado);
+            contador += 1;
             if (Inicio == 0) {
                Inicio = Fin = nuevoNodo;
                nuevoNodo->Set_contador(contador);
@@ -53,12 +57,24 @@ class ListaEnlazadaCircular{
                 Fin = nuevoNodo;
                 
             }
-            contador += 1;
+            
             
         }
-        void imprimir(){
+        bool buscar_emplado(string nombre){
             Nodo3* aux = Inicio;
-            
+            bool aux2 = true;
+            int aux3 = 1;
+            while(aux2){
+                if(aux->Get_empleado()->Get_Nombre() == nombre){
+                    return false;
+                }
+                aux = aux->siguiente;
+                aux3 += 1;
+                if(aux3 == contador){
+                    aux2 = false;
+                }
+            }
+            return true;
         }
         
         

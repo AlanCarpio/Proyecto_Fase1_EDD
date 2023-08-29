@@ -7,6 +7,7 @@ using namespace std;
 #include "../view/modules.h"
 #include "Empleado_Controller.h"
 #include "Proyecto_Controller.h"
+#include "Tareas_Controller.h"
 
 int Cargar_Empleado_Start(ListaEnlazadaCircular* listacircular,Matriz_Dispersa* Matriz){
     //system("cls");
@@ -50,12 +51,12 @@ int Cargar_Empleado_Start(ListaEnlazadaCircular* listacircular,Matriz_Dispersa* 
 int Start(){
     string archivo;
     bool Estado = true;
-    //Cola* Cola_Ordenada = new Cola();
+    Cola* Cola_Ordenada = new Cola();
     ListaEnlazadaCircular* listacircular = new ListaEnlazadaCircular(); // Almacena Tareas
     Matriz_Dispersa* Matriz = new Matriz_Dispersa();// Proyecto vs Empleado
     Cola* Cola_proyectos = new Cola();//Almacena Proyectos
     while (Estado){
-        
+        //system("cls");
         switch (Main_Menu()){
         case 1:
             system("cls");
@@ -64,27 +65,28 @@ int Start(){
             break;
         case 2:
             system("cls");
-            Crear_Proyecto_Controller(Cola_proyectos,Matriz);
+            Crear_Proyecto_Controller(Cola_proyectos,Cola_Ordenada,Matriz);
             break;
         case 3:
             system("cls");
-            Cola_proyectos->imprimir();
-            cout<<"-----------"<<endl;
-            Cola_proyectos->ordenamiento();
-            Cola_proyectos->imprimir();
+            Cola_Ordenada->ordenamiento();
+            Cola_Ordenada->Graficar();
+            Crear_Tarea_Controller(Cola_proyectos);
             break;
         case 4:
             system("cls");
-            Matriz->imprimir();
+            Cola_proyectos->Json();
             break;
         case 5:
             system("cls");
-            Asignar_Proyecto_Controller(Matriz);
+            Asignar_Proyecto_Controller(Matriz,Cola_proyectos,listacircular);
             break;
         case 6:
             system("cls");
             Estado = false;
             delete listacircular;
+            delete Matriz;
+            delete Cola_proyectos;
             break;
         default:
             system("cls");

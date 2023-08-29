@@ -1,6 +1,8 @@
 /*Lista para guardar proyectos*/
 #include <iostream>
+#include <fstream>
 #include "../ClasesObjet/Proyecto.h"
+
 #pragma once
 using namespace std;
 class Nodo1{
@@ -85,14 +87,95 @@ class Cola{
                 }
             }
         }
-        void imprimir(){
+        void Graficar(){
             Nodo1* aux = Inicio;
-            while (aux != 0){
-                cout<<aux->proyecto->Get_ID_proyecto()<<',';
-                cout<<aux->proyecto->Get_Nombre()<<',';
-                cout<<aux->proyecto->Get_Prioridad()<<endl;
+            ofstream archivo;
+            string nombre_archivo = "ColaPrioridad.dot";
+            string nombre_imagen = "ColaPrioridad.jpg";
+            archivo.open(nombre_archivo, ios::out);
+            archivo << "digraph ColaPrioridad{ \n node[shape=box] \n rankdir=UD;\n";
+            int group = 0;
+            archivo << "{rank=same; \n";
+            while(aux != 0){
+                
+                archivo << "nodo" << aux << "[label=\"" << aux->Get_proyecto()->Get_ID_proyecto() << "\\n" << aux->Get_proyecto()->Get_Prioridad() << "\" ,group=" << (group) << "]; \n";
+                aux = aux->siguiente;
+                group += 1;
+                
+            }
+            archivo << "} \n";
+            aux = Inicio;
+            while(aux->siguiente != 0){
+                archivo << "nodo" << aux << " -> " << "nodo" << aux->siguiente << " [dir=both];\n";
                 aux = aux->siguiente;
             }
+            archivo << "} \n";
+            archivo.close();
             
+            string codigo_cmd="dot -Tjpg ";
+            codigo_cmd+=nombre_archivo;
+            codigo_cmd+=" -o ";
+            codigo_cmd+=nombre_imagen;
+            char j[codigo_cmd.size()+1];
+            strcpy(j,codigo_cmd.c_str());
+            system(j);
+            
+        }
+        void Json(){
+            Nodo1* aux = Inicio;
+            ofstream archivo_json;
+            string nombre_archivo = "Proyectos.json";
+            archivo_json.open(nombre_archivo, ios::out);
+            archivo_json<< "{ \n";
+            archivo_json<< "\"Proyectos\":[ \n";
+            while(aux!=0){
+                if (aux->siguiente != 0){
+                    archivo_json<< "{ \n";
+                    archivo_json<< "\"ID\""<<":"<<"\""<<aux->Get_proyecto()->Get_ID_proyecto()<<"\",\n";
+                    archivo_json<< "\"Nombre\""<<":"<<"\""<<aux->Get_proyecto()->Get_Nombre()<<"\",\n";
+                    archivo_json<< "\"Prioridad\""<<":"<<"\""<<aux->Get_proyecto()->Get_Prioridad()<<"\",\n";
+                    archivo_json<< "\"Tareas\":[ \n";
+                    archivo_json<< aux->Get_proyecto()->Get_Tarea_lista()->Iterar_Tareas();
+                    archivo_json<< "]\n";
+                    archivo_json<< "},\n";
+                }
+                else{
+                    archivo_json<< "{ \n";
+                    archivo_json<< "\"ID\""<<":"<<"\""<<aux->Get_proyecto()->Get_ID_proyecto()<<"\",\n";
+                    archivo_json<< "\"Nombre\""<<":"<<"\""<<aux->Get_proyecto()->Get_Nombre()<<"\",\n";
+                    archivo_json<< "\"Prioridad\""<<":"<<"\""<<aux->Get_proyecto()->Get_Prioridad()<<"\",\n";
+                    archivo_json<< "\"Tareas\":[ \n";
+                    archivo_json<< aux->Get_proyecto()->Get_Tarea_lista()->Iterar_Tareas();
+                    archivo_json<< "]\n";
+                    archivo_json<< "}\n";
+                }
+                
+                aux = aux->siguiente;
+            }
+            archivo_json<< "]\n";
+            archivo_json<< "}\n";
+            archivo_json.close();
+        }
+        bool busqueda(string ID_proyecto){
+            Nodo1* aux = Inicio;
+            while(aux != 0){
+                if(aux->Get_proyecto()->Get_ID_proyecto() == ID_proyecto){
+                    return false;
+                }
+                aux = aux->siguiente;
+
+            }
+            return true;
+        }
+        Proyecto* busqueda_proyecto_tarea(string ID_proyecto){
+            Nodo1* aux = Inicio;
+            while(aux != 0){
+                if(aux->Get_proyecto()->Get_ID_proyecto() == ID_proyecto){
+                    return aux->Get_proyecto();
+                }
+                aux = aux->siguiente;
+
+            }
+            return 0;
         }
 };

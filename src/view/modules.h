@@ -47,14 +47,6 @@ tuple<string,string> Carga_Manual(){
     string password;
     cout << "Nombre: "; cin >> nombre;
     cout << "Password: "; cin >> password;
-    /*
-    cout << "Puestos Disponibles";
-    cout << "1. Developer Frontend";
-    cout << "2. Developer BackEnd";
-    cout << "3. Quality Assurance";
-    cout << "Elige una Opcion: "; cin >> resultado;
-    */
-    
     return make_tuple(nombre,password);
 
 }
@@ -89,12 +81,19 @@ tuple<string,string> Asignar_proyecto(){
 tuple<string,string> Crear_tarea(/* Lista de Proyectos*/ ){
     string ID_proyecto;
     string Nombre_tarea;
+    cout << "*********    EDD Proyect Phase 1    *********"<<endl;
+    cout << "*********    Bienvenido " << _username << "    *********"<<endl;
+    cout << "*********    Menu Tareas            *********"<<endl;
+   cout << "Elije un proyecto(ID): ";cin >> ID_proyecto;
+   cout << "Nombre Tarea: ";cin >> Nombre_tarea;
+   return make_tuple(ID_proyecto ,Nombre_tarea) ;
+}
+tuple<string,string> Asignar_Tarea(/* Lista de Proyectos*/ ){
+    string ID_proyecto;
+    string Nombre_tarea;
     cout << "*********    EDD Proyect Phase 1    *********";
     cout << "*********    Bienvenido " << _username << "    *********";
     cout << "*********    Menu Tareas            *********";
-    /*
-    Iteracion de proyectos.
-    */
    cout << "Elije un proyecto: ";cin >> ID_proyecto;
    cout << "Nombre Tarea: ";cin >> Nombre_tarea;
    return make_tuple(ID_proyecto ,Nombre_tarea) ;
