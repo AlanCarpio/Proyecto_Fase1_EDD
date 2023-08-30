@@ -4,6 +4,7 @@
 using namespace std;
 #include "../model/Estructuras/ListEnlaCircular.h"
 #include "../model/Estructuras/Cola.h"
+#include "../model/Estructuras/ListaEnlazada.h"
 #include "../view/modules.h"
 #include "Empleado_Controller.h"
 #include "Proyecto_Controller.h"
@@ -55,6 +56,8 @@ int Start(){
     ListaEnlazadaCircular* listacircular = new ListaEnlazadaCircular(); // Almacena Tareas
     Matriz_Dispersa* Matriz = new Matriz_Dispersa();// Proyecto vs Empleado
     Cola* Cola_proyectos = new Cola();//Almacena Proyectos
+    ListaEnlazada* listaTarea = new ListaEnlazada();
+
     while (Estado){
         //system("cls");
         switch (Main_Menu()){
@@ -75,7 +78,8 @@ int Start(){
             break;
         case 4:
             system("cls");
-            Cola_proyectos->Json();
+            //Cola_proyectos->Json();
+            Asignar_Tarea_controller(listaTarea);
             break;
         case 5:
             system("cls");

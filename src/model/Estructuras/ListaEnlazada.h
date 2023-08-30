@@ -66,7 +66,7 @@ class ListaEnlazada{
         void Tareas(){
             Nodo2* aux = Inicio;
             while(aux != 0){
-                cout<<aux->Get_Tarea()->Get_Nombre();
+                cout<<aux->Get_Tarea()->Get_Nombre()<<endl;
                 aux = aux->siguiente;
             }
         }

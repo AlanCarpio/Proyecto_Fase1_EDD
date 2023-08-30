@@ -24,7 +24,9 @@ void Crear_Tarea_Controller(Cola* cola){
         Sleep(5000);
     }
 }
-void Asignar_Tarea_controller(){
-
+void Asignar_Tarea_controller(ListaEnlazada* lista){
+    Tarea* tarea = new Tarea("Carpio");
+    lista->Agregar_Tarea(tarea);
+    lista->Tareas();
 }
     
