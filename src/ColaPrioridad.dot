@@ -2,6 +2,8 @@ digraph ColaPrioridad{
  node[shape=box] 
  rankdir=UD;
 {rank=same; 
-nodo0x6f0588[label="PY-100\nC" ,group=0]; 
+nodo0x780588[label="PY-100\nA" ,group=0]; 
+nodo0x78c090[label="PY-101\nC" ,group=1]; 
 } 
+nodo0x780588 -> nodo0x78c090 [dir=both];
 } 

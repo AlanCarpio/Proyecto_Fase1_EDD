@@ -2,11 +2,27 @@
 "Proyectos":[ 
 { 
 "ID":"PY-100",
-"Nombre":"Proyecto1",
+"Nombre":"asd",
+"Prioridad":"A",
+"Tareas":[ 
+{ 
+ "Nombre":"Tarea1" 
+},
+{ 
+ "Nombre":"Tarea2" 
+},
+{ 
+ "Nombre":"Tarea3" 
+}
+]
+},
+{ 
+"ID":"PY-101",
+"Nombre":"Proyecto2",
 "Prioridad":"C",
 "Tareas":[ 
 { 
- "Nombre":"" 
+ "Nombre":"Alan" 
 }
 ]
 }

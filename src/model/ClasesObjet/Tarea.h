@@ -1,10 +1,11 @@
-#include <iostream>
 #pragma once
+#include <iostream>
+
 using namespace std;
 
 class Tarea{
     private:
-        string Nombre_Tarea;
+        string tarea;
         string nombre_empleado;
         //ListaEnlazada* Sucesor = 0;
         //ListaEnlazada* Antecesor = 0;
@@ -12,13 +13,13 @@ class Tarea{
         
     public:
         Tarea(string Nombre_tarea){
-            this->Nombre_Tarea = Nombre_Tarea;
+            this->tarea = Nombre_tarea;
             //this->Sucesor = new ListaEnlazada();
             //this->Antecesor = new ListaEnlazada();
             //this->Responsables = new ListaEnlazada();
         };
         string Get_Nombre(){
-            return this->Nombre_Tarea;
+            return this->tarea;
         }
         // constructor responsable
         /*

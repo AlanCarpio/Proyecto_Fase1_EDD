@@ -18,7 +18,7 @@ void Crear_Tarea_Controller(Cola* cola){
     else{
         proyecto->Get_Tarea_lista()->Agregar_Tarea(get<1>(Tarea_tuple));
         cout<<"Tarea creada Exitosamente";
-        //proyecto->Get_Tarea_lista()->Tareas();
+        proyecto->Get_Tarea_lista()->Tareas();
         
     }
 }

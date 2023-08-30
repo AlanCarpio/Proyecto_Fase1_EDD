@@ -44,7 +44,7 @@ class ListaEnlazada{
             string archivo;
             while(aux != 0){
                 if(aux->siguiente != 0){
-                    archivo = "{ \n ";
+                    archivo = archivo + "{ \n ";
                     archivo = archivo + "\"Nombre\":";
                     archivo = archivo + "\"";
                     cout<<aux->tarea->Get_Nombre()<<endl;
@@ -53,7 +53,7 @@ class ListaEnlazada{
                     archivo = archivo + "},\n";
                 }
                 else{
-                    archivo = "{ \n ";
+                    archivo = archivo + "{ \n ";
                     archivo = archivo + "\"Nombre\":";
                     archivo = archivo + "\"";
                     archivo = archivo + aux->Get_Tarea()->Get_Nombre();
