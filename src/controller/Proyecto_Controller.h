@@ -17,6 +17,7 @@ void Crear_Proyecto_Controller(Cola* cola,Cola* Prioridad,Matriz_Dispersa* Matri
     system("cls");
     cout<<"Proyecto Creado Exitosamente...";
     Sleep(2000);
+    system("cls");
     
 }
 void Asignar_Proyecto_Controller(Matriz_Dispersa* Matriz,Cola* cola,ListaEnlazadaCircular* circular){

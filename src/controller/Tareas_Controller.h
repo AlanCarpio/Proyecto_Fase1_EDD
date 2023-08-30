@@ -12,13 +12,18 @@ void Crear_Tarea_Controller(Cola* cola){
     
     Proyecto* proyecto = cola->busqueda_proyecto_tarea(get<0>(Tarea_tuple));
     if (proyecto == 0){
+        system("cls");
         cout<<"Ese proyecto no existe en nuestra base de datos";
         Sleep(2000);
+        system("cls");
     }
     else{
         proyecto->Get_Tarea_lista()->Agregar_Tarea(get<1>(Tarea_tuple));
+        system("cls");
         cout<<"Tarea creada Exitosamente";
-        proyecto->Get_Tarea_lista()->Tareas();
+        Sleep(2000);
+        system("cls");
+        
         
     }
 }

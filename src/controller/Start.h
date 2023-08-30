@@ -24,7 +24,7 @@ int Cargar_Empleado_Start(ListaEnlazadaCircular* listacircular,Matriz_Dispersa* 
     }
     else if(result == 2){
         int result_1 = Carga_Masiva_Controller(Carga_Masiva(),listacircular,Matriz);
-        //system("cls");
+        system("cls");
         if (result_1 == 1){
             cout<<"Carga Exitosa"<<endl;
         }
@@ -32,6 +32,7 @@ int Cargar_Empleado_Start(ListaEnlazadaCircular* listacircular,Matriz_Dispersa* 
             cout << "No se pudo abrir el archivo." <<endl;
         }
         Sleep(2000);
+        system("cls");
         Cargar_Empleado_Start(listacircular,Matriz);
     }              
     else if(result == 3){

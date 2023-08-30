@@ -24,16 +24,6 @@ nodo0x19b550[label="Alan" ,group=0];
 nodo0x19b438[label="Carpio" ,group=0]; 
 nodo0x19b5f0[label="PY-102\nBDEV-000" ,group=3]; 
 } 
-{rank=same; 
-} 
-{rank=same; 
-} 
-{rank=same; 
-} 
-{rank=same; 
-} 
-{rank=same; 
-} 
 nodo0x1916d8 -> nodo0x191750 [dir=both];
 nodo0x191750 -> nodo0x191778 [dir=both];
 nodo0x191778 -> nodo0x1917a0 [dir=both];

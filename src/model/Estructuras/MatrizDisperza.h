@@ -4,7 +4,7 @@ using namespace std;
 #include <iostream>
 #include <string.h>
 #include <fstream>
-
+#include <windows.h>
 #include "Cola.h"
 #include "ListEnlaCircular.h"
 #include "../ClasesObjet/Proyecto.h"
@@ -182,7 +182,10 @@ class Matriz_Dispersa{
                     asd = false;
                 } 
             }
+            system("cls");
             cout<<"Proyecto asignado"<<endl;
+            Sleep(2000);
+            system("cls");
         }
         void Asignar_proyecto(string nombre,string ID_proyecto,Cola* cola,ListaEnlazadaCircular* circular){
             string puesto;
@@ -190,10 +193,16 @@ class Matriz_Dispersa{
             bool asd = true;
             int respuesta;
             if (circular->buscar_emplado(nombre)){
+                system("cls");
                 cout<<"No existe ese empleado en la base de datos"<<endl;
+                Sleep(2000);
+                system("cls");
             }
             else if (cola->busqueda(ID_proyecto)){
+                system("cls");
                 cout<<"No existe ese ID de proyecto en la base de datos"<<endl;
+                Sleep(2000);
+                system("cls");
             }
             else{
                 if (buscar_empleado(nombre)->Get_empleado()->Get_ID_empleado() == "vacio"){
@@ -204,37 +213,42 @@ class Matriz_Dispersa{
                     cout<<"3.Quality Assurance(QA)"<<endl;
                     cout<<"Puesto: ";cin>>respuesta;
                     if(respuesta == 1){
+                        contadorF += 1;
                         string fdev = "FDEV-00";
                         if(contadorF > 9){
                             fdev = "FDEV-0";
                         }
                         puesto = fdev+to_string(contadorF);
-                        contadorF += 1;
+                        
                         asd = false;
                         buscar_empleado(nombre)->Get_empleado()->Set_ID_empleado(puesto);
                     }
                     else if(respuesta == 2){
+                        contadorB += 1;
                         string fdev = "BDEV-00";
                         if(contadorF > 9){
                             fdev = "BDEV-0";
                         }
                         puesto = fdev+to_string(contadorB);
-                        contadorB += 1;
+                        
                         asd = false;
                         buscar_empleado(nombre)->Get_empleado()->Set_ID_empleado(puesto);
                     }
                     else if(respuesta == 3){
+                        contadorQ += 1;
                         string fdev = "QA-00";
                         if(contadorF > 9){
                             fdev = "QA-0";
                         }
                         puesto = fdev+to_string(contadorQ);
-                        contadorQ += 1;
+                        
                         asd = false;
                         buscar_empleado(nombre)->Get_empleado()->Set_ID_empleado(puesto);
                     }
                     else{
+                        system("cls");
                         cout<<"Ingrese una opcion Valida"<<endl;
+                        Sleep(2000);
                     }
                     
                 }
