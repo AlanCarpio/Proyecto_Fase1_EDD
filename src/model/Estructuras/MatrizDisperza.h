@@ -73,8 +73,8 @@ class Matriz_Dispersa{
         Matriz_Dispersa(){
             int x = 0;
             int y = 0;
-            int n = 5;
-            int m = 5;
+            int n = 11;
+            int m = 10;
             bool wasp = true;
             bool wasp2 = true;
             Proyecto* proyecto = new Proyecto("Raiz");

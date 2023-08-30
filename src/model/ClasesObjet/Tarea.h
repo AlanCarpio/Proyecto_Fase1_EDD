@@ -1,7 +1,7 @@
 #include <iostream>
 #pragma once
 using namespace std;
-#include "../Estructuras/ListaEnlazada.h"
+
 class Tarea{
     private:
         string Nombre_Tarea;

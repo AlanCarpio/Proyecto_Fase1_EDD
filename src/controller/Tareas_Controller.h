@@ -4,7 +4,7 @@
 #pragma once
 using namespace std;
 #include "../view/modules.h"
-#include "../model/ClasesObjet/Tarea.h"
+//#include "../model/ClasesObjet/Tarea.h"
 #include "../model/Estructuras/Cola.h"
 #include "../model/Estructuras/ListaEnlazada.h"
 void Crear_Tarea_Controller(Cola* cola){
@@ -16,12 +16,10 @@ void Crear_Tarea_Controller(Cola* cola){
         Sleep(2000);
     }
     else{
-        
-        Tarea* tarea = new Tarea(get<1>(Tarea_tuple));
-        proyecto->Get_Tarea_lista()->Agregar_Tarea(tarea);
+        proyecto->Get_Tarea_lista()->Agregar_Tarea(get<1>(Tarea_tuple));
         cout<<"Tarea creada Exitosamente";
-        proyecto->Get_Tarea_lista()->Tareas();
-        Sleep(5000);
+        //proyecto->Get_Tarea_lista()->Tareas();
+        
     }
 }
 void Asignar_Tarea_controller(){

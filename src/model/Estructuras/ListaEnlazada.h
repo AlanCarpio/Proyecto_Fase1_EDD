@@ -27,7 +27,8 @@ class ListaEnlazada{
             this->Inicio = 0;
             this->Fin = 0;
         }
-        void Agregar_Tarea(Tarea* tarea){
+        void Agregar_Tarea(string nombre){
+            Tarea* tarea = new Tarea(nombre);
             Nodo2* nuevoNodo = new Nodo2(tarea);
             if (Inicio == 0) {
                 Inicio = Fin = nuevoNodo;

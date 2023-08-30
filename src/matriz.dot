@@ -1,14 +1,48 @@
-digraph ColaPrioridad{ 
-    node[shape=box] 
-    rankdir=UD;
-    {rank=same; 
-    nodo0x730588[label="PY-100\nC" ,group=0];
-   
-    nodo0x73af58[label="PY-101\nB" ,group=1];
-    
-    
-    nodo0x73b040[label="PY-102\nA" ,group=2]; 
-    } 
-    nodo0x73af58 -> nodo0x730588 [dir=both];nodo0x73af58
-    nodo0x73b040 -> nodo0x73af58 [dir=both];nodo0x73b040
+digraph MatrizCapa{ 
+ node[shape=box] 
+ rankdir=UD;
+{rank=same; 
+nodo0x1916d8[label="Raiz" ,group=0]; 
+nodo0x191750[label="PY-100" ,group=1]; 
+nodo0x191778[label="PY-101" ,group=2]; 
+nodo0x1917a0[label="PY-102" ,group=3]; 
+nodo0x1917c8[label="PY-103" ,group=4]; 
+} 
+{rank=same; 
+nodo0x1918e0[label="Empleado1" ,group=0]; 
+} 
+{rank=same; 
+nodo0x19a688[label="Empleado2" ,group=0]; 
+} 
+{rank=same; 
+nodo0x19a700[label="Empleado3" ,group=0]; 
+} 
+{rank=same; 
+nodo0x19b550[label="Alan" ,group=0]; 
+} 
+{rank=same; 
+nodo0x19b438[label="Carpio" ,group=0]; 
+nodo0x19b5f0[label="PY-102\nBDEV-000" ,group=3]; 
+} 
+{rank=same; 
+} 
+{rank=same; 
+} 
+{rank=same; 
+} 
+{rank=same; 
+} 
+{rank=same; 
+} 
+nodo0x1916d8 -> nodo0x191750 [dir=both];
+nodo0x191750 -> nodo0x191778 [dir=both];
+nodo0x191778 -> nodo0x1917a0 [dir=both];
+nodo0x1917a0 -> nodo0x1917c8 [dir=both];
+nodo0x1916d8 -> nodo0x1918e0 [dir=both];
+nodo0x1918e0 -> nodo0x19a688 [dir=both];
+nodo0x19a688 -> nodo0x19a700 [dir=both];
+nodo0x19a700 -> nodo0x19b550 [dir=both];
+nodo0x19b550 -> nodo0x19b438 [dir=both];
+nodo0x19b438 -> nodo0x19b5f0 [dir=both];
+nodo0x1917a0 -> nodo0x19b5f0 [dir=both];
 } 

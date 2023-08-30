@@ -11,8 +11,6 @@ using namespace std;
 void Crear_Proyecto_Controller(Cola* cola,Cola* Prioridad,Matriz_Dispersa* Matriz){
     tuple<string,char> proyecto_tuple = Crear_proyecto();
     Proyecto* proyecto = new Proyecto(get<0>(proyecto_tuple),get<1>(proyecto_tuple));
-    ListaEnlazada* lista_tareas = new ListaEnlazada();
-    proyecto->Set_Tarea_lista(lista_tareas); 
     Matriz->insertar_proyectos(proyecto);
     cola->Insertar_proyecto(proyecto);
     Prioridad->Insertar_proyecto(proyecto);

@@ -10,7 +10,7 @@ class Proyecto{
        string ID_empleado;
        string Nombre;
        char Prioridad;
-       ListaEnlazada* Tareas;
+       ListaEnlazada* tarea;
       
     public:
         Proyecto(string _Nombre){
@@ -19,7 +19,7 @@ class Proyecto{
         Proyecto(string _Nombre,char _Prioridad){
             this->Nombre=_Nombre;
             this->Prioridad=_Prioridad;
-            //this->Tareas = new ListaEnlazada();
+            this->tarea = new ListaEnlazada();
         }
         Proyecto(string ID_proyecto,string ID_empleado){
             this->ID_proyecto=ID_proyecto;
@@ -53,11 +53,9 @@ class Proyecto{
         //-------Tarea -------
         
         ListaEnlazada* Get_Tarea_lista(){
-            return this->Tareas;
+            return tarea;
         }
-        void Set_Tarea_lista(ListaEnlazada* lista_tarea){
-            this->Tareas = lista_tarea;
-        }
+        
         
     
 };

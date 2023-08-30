@@ -65,12 +65,14 @@ class ListaEnlazadaCircular{
             bool aux2 = true;
             int aux3 = 1;
             while(aux2){
-                if(aux->Get_empleado()->Get_Nombre() == nombre){
+                if (aux != 0){
+                    if(aux->Get_empleado()->Get_Nombre() == nombre){
                     return false;
+                    }
                 }
                 aux = aux->siguiente;
                 aux3 += 1;
-                if(aux3 == contador){
+                if(aux3 == contador+1){
                     aux2 = false;
                 }
             }

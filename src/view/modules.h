@@ -4,16 +4,17 @@ using namespace std;
 #include <tuple>
 string _username = "PM-202000869";
 string _password = "password";
-int Login(){
+BOOLEAN Login(){
     string username = "";
     string password = "";
     cout << "Enter your Username: "; cin >>username ;
     cout <<"Enter Password :";cin>>password;
     if(username == _username && password== _password)
-        return 1;
+        return false;
     else
     {
-        return 0;
+        cout<<"Password o UserName incorrecto"<<endl;
+        return true;
     }
 }
 int Main_Menu(){

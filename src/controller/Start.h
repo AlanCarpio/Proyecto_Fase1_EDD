@@ -4,13 +4,14 @@
 using namespace std;
 #include "../model/Estructuras/ListEnlaCircular.h"
 #include "../model/Estructuras/Cola.h"
+
 #include "../view/modules.h"
 #include "Empleado_Controller.h"
 #include "Proyecto_Controller.h"
 #include "Tareas_Controller.h"
 
 int Cargar_Empleado_Start(ListaEnlazadaCircular* listacircular,Matriz_Dispersa* Matriz){
-    //system("cls");
+    system("cls");
     int result = Cargar_Empleado();
     if (result == 1){
         system("cls");
@@ -55,8 +56,14 @@ int Start(){
     ListaEnlazadaCircular* listacircular = new ListaEnlazadaCircular(); // Almacena Tareas
     Matriz_Dispersa* Matriz = new Matriz_Dispersa();// Proyecto vs Empleado
     Cola* Cola_proyectos = new Cola();//Almacena Proyectos
+    //ListaEnlazada* lista_tareas = new ListaEnlazada();
+    bool login = true;
+    while(login){
+        login = Login();
+    }
+    system("cls");
     while (Estado){
-        //system("cls");
+        system("cls");
         switch (Main_Menu()){
         case 1:
             system("cls");
@@ -87,6 +94,7 @@ int Start(){
             delete listacircular;
             delete Matriz;
             delete Cola_proyectos;
+            delete Cola_Ordenada;
             break;
         default:
             system("cls");
